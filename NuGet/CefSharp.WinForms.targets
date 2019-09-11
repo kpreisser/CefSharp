@@ -3,6 +3,14 @@
   <PropertyGroup>
     <CefSharpTargetDir Condition=" '$(CefSharpTargetDir)' == '' "></CefSharpTargetDir>
   </PropertyGroup>
+  
+  <!--
+    For .NET Core projects, set the startup object to our main method that
+    handles the subprocess startup logic.
+  -->
+  <PropertyGroup Condition="$(TargetFramework.StartsWith('netcoreapp'))">  
+    <StartupObject>CefSharp.BrowserSubprocess.WinForms.SubprocessStartupHandler</StartupObject>
+  </PropertyGroup>
 
   <!--
     These item groups should be in the .props file, unfortunately Nuget 2.8.x doesn't gurantee the

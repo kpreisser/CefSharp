@@ -43,5 +43,7 @@
     <file src="Readme.txt" target="" />
 
     <file src="..\CefSharp.WinForms\**\*.cs" target="src\CefSharp.WinForms" />
+    
+    <file src="CefSharp.WinForms.contentFiles\**\*.*" target="contentFiles" />
   </files>
 </package>
