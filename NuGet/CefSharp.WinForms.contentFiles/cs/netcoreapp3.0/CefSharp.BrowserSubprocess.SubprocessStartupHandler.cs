@@ -117,13 +117,13 @@ namespace CefSharp.BrowserSubprocess.WinForms
             {
                 var d = (Action)Delegate.CreateDelegate(typeof(Action), mainMethod);
                 d(); 
-                return 0;
+                return Environment.ExitCode;
             }
             else 
             {
                 var d = (Action<string[]>)Delegate.CreateDelegate(typeof(Action<string[]>), mainMethod);
                 d(args);
-                return 0;
+                return Environment.ExitCode;
             }
         }
 
